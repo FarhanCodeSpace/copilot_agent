@@ -30,18 +30,6 @@ def make_decision(input_data):
         user_prompt,
     )
     return response
-    # from_email = input_data['from']
-    # subject = input_data['subject']
-    # email_text = input_data['text']
-
-    # if 'big sale' in email_text:
-    #     return 'MARK_AS_SPAM'
-    # elif from_email.endswith('@xyzcorp.com'):
-    #     return 'ADD_LABEL'
-    # elif 'ASAP' in email_text:
-    #     return 'RESPOND_TO_EMAIL'
-    # else:
-    #     return 'DO_NOTHING'
 
 #Tools
 def respond_to_email(response_text):
@@ -72,6 +60,7 @@ def execute_decision(decision):
     elif decision == 'MARK_AS_SPAM':
         mark_as_spam()
     elif decision == 'DELETE_EMAIL':
+        # Human-in-the-loop
         approval = input('Do you realy want to let the agent to delete this email? (Y/n): ')
         if approval == 'Y':
             print('Deleting email...')
